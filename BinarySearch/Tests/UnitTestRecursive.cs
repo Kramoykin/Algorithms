@@ -1,10 +1,10 @@
-using static BinarySearch.BinarySearchCycle;
+using static BinarySearch.BinarySearchRecurcive;
 using static BinarySearch.Tests.ArrayHandler;
 
 
 namespace BinarySearch.Tests;
 
-public class BinarySearchTestsCycle
+public class BinarySearchTestsRecurcive
 {
     [Fact]
     public void TestElementFound()

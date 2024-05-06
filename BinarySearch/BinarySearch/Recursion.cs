@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BinarySearch
+﻿namespace BinarySearch
 {
     public class BinarySearchRecurcive
     {
@@ -9,19 +7,19 @@ namespace BinarySearch
             int low = 0;
             int high = arr.Length - 1;
 
-            while (low < high) 
-            {
-                (low, high) = RecourciveSearch(arr, low, high, num);
-            }
-
-            return low == high ? 0 : low;
+            return RecourciveSearch(arr, low, high, num);
         }
 
-        protected static (int, int) RecourciveSearch(int[] arr, int leftIndex, int rightIndex, int num)
+        protected static int? RecourciveSearch(int[] arr, int leftIndex, int rightIndex, int num)
         {
             if (leftIndex == rightIndex)
             {
-                return (leftIndex, leftIndex);
+                if (arr[leftIndex] == num)
+                {
+                    return leftIndex;
+                }
+
+                return null;
             }
 
             var median = (rightIndex + leftIndex) / 2;
